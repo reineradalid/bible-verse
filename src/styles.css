@@ -1,0 +1,156 @@
+/* Global */
+ body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden; /* prevent horizontal scroll */
+  font-family: 'Georgia', serif;
+}
+
+
+/* Flex utilities */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.min-h-screen { min-height: 100vh; }
+
+/* Positioning */
+.relative { position: relative; }
+.absolute { position: absolute; }
+.inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+
+/* Text & fonts */
+.text-center { text-align: center; }
+.font-serif { font-family: Georgia, serif; }
+.text-gray-800 { color: #1f2937; }
+.text-xs { font-size: 0.75rem; }
+.text-sm { font-size: 0.875rem; }
+.text-base { font-size: 1rem; }
+.leading-relaxed { line-height: 1.625; }
+
+/* Shadows & borders */
+.rounded-2xl { border-radius: 1rem; }
+.shadow-md { box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+.drop-shadow-xl { filter: drop-shadow(0 20px 25px rgba(0, 0, 0, 0.15)); }
+.border { border: 1px solid #d1d5db; }
+.bg-white { background: #fff; }
+
+/* Spacing */
+.mt-8 { margin-top: 2rem; }
+.p-3 { padding: 0.75rem; }
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* horizontal centering */
+  justify-content: center;   /* vertical centering */
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+              /* optional: prevents content touching edges */
+  overflow: hidden;          /* hides overflow if needed */
+}
+
+.bibleContainer{
+   position: absolute;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  
+}
+/* Verse overlay inside book */
+.verse-container {
+  position: absolute;
+  width: 80%;       /* matches the image width */
+  height: 80%;      /* matches the image height */
+  display: flex;   /* adjust to fit pages */
+  box-sizing: border-box;
+  
+}
+
+.verse-left {
+  width: 60%;
+  display: flex;
+  justify-content: center;  /* horizontal centering */
+  align-items: start;      /* vertical centering */
+  text-align: center;
+}
+
+.verse-right {
+   width: 60%;
+  display: flex;
+  justify-content: right;
+  align-items: flex-end;
+  padding: 3rem;
+
+}
+
+.verse-text {
+ font-family: Georgia, serif;
+  font-size: 1.2rem;
+  line-height: 1.625;
+  color: #1f2937;
+}
+
+.book-signature {
+  font-weight: bold;
+  font-family: Georgia, serif;
+  color: #1f2937;
+  font-size: 0.875rem;
+ 
+}
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; /* margin between dropdown and button */
+  margin-top: 20px;
+  width: 250px; /* fixed width for both */
+  position: absolute;
+  bottom: 0;
+  padding: 5rem;
+}
+
+.custom-button {
+  width: 100%;                  /* full width of container */
+  padding: 12px 20px;           /* padding */
+  border-radius: 24px;          /* rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* subtle shadow */
+  border: 1px solid #d1d5db;   /* border color */
+  background-color: #ffffff;    /* white background */
+  outline: none;                /* remove default outline */
+  cursor: pointer;              /* pointer on hover */
+  font-size: 16px;              /* same text size */
+  text-align: center;           /* center text for button */
+  transition: all 0.2s ease;    /* smooth hover/focus effect */
+}
+
+.custom-button:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* hover shadow */
+}
+
+.custom-button:focus {
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5); /* focus ring */
+}
+.my-element {
+  width: 600px;
+  /* optional: add responsive widths if needed */
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .verse-text { font-size: 0.875rem; }
+  .book-signature { font-size: 0.75rem; }
+  .verse-container { padding: 1rem; }
+  .my-element {
+     width: 600px;
+  }
+}
+@media (min-width: 640px) { /* sm */
+  .my-element {
+    width: 600px;
+  }
+}
+
+
