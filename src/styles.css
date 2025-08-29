@@ -155,6 +155,9 @@ body {
   .verse-text { font-size: 0.875rem; }
   .buttons { width: 95%; padding: 0.5rem; }
   .my-element { width: 95%; }
+   .verse-text { font-size: 0.8rem; padding:2rem; max-width: 90%;  }
+  .book-signature { font-size: 0.7rem;padding-bottom:2rem;padding-right: 1.5rem; }
+  
 }
 
 @media (max-width: 480px) {
