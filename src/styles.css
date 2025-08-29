@@ -1,13 +1,12 @@
 /* Global */
- body {
+body {
   margin: 0;
   padding: 0;
   width: 100vw;
-  height: 100vh;
-  overflow-x: hidden; /* prevent horizontal scroll */
+  min-height: 100vh;
+  overflow-x: hidden;
   font-family: 'Georgia', serif;
 }
-
 
 /* Flex utilities */
 .flex { display: flex; }
@@ -40,117 +39,126 @@
 /* Spacing */
 .mt-8 { margin-top: 2rem; }
 .p-3 { padding: 0.75rem; }
+
+/* App container */
 .app-container {
   display: flex;
   flex-direction: column;
-  align-items: center;       /* horizontal centering */
-  justify-content: center;   /* vertical centering */
-  width: 100vw;
-  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
   box-sizing: border-box;
-              /* optional: prevents content touching edges */
-  overflow: hidden;          /* hides overflow if needed */
+  overflow: hidden;
 }
 
-.bibleContainer{
-   position: absolute;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-  
+/* Bible container */
+.bibleContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
+
 /* Verse overlay inside book */
 .verse-container {
   position: absolute;
-  width: 80%;       /* matches the image width */
-  height: 80%;      /* matches the image height */
-  display: flex;   /* adjust to fit pages */
+  width: 90%;  /* responsive width */
+  height: 90%;
+  display: flex;
   box-sizing: border-box;
-  
+  flex-wrap: wrap; /* adjust on smaller screens */
 }
 
-.verse-left {
-  width: 60%;
+.verse-left,
+.verse-right {
+  width: 100%; /* stack on mobile */
   display: flex;
-  justify-content: center;  /* horizontal centering */
-  align-items: start;      /* vertical centering */
+  justify-content: center;
+  align-items: flex-start;
   text-align: center;
+  padding: 1rem;
 }
 
 .verse-right {
-   width: 60%;
-  display: flex;
-  justify-content: right;
+  justify-content: center;
   align-items: flex-end;
-  padding: 3rem;
-
 }
 
+/* Verse text */
 .verse-text {
- font-family: Georgia, serif;
+  font-family: Georgia, serif;
   font-size: 1.2rem;
   line-height: 1.625;
   color: #1f2937;
 }
 
+/* Book signature */
 .book-signature {
   font-weight: bold;
   font-family: Georgia, serif;
   color: #1f2937;
   font-size: 0.875rem;
- 
+  margin-top: 0.5rem;
 }
+
+/* Buttons */
 .buttons {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px; /* margin between dropdown and button */
-  margin-top: 20px;
-  width: 250px; /* fixed width for both */
-  position: absolute;
-  bottom: 0;
-  padding: 5rem;
+  gap: 1rem;
+  width: 90%;        /* responsive */
+  max-width: 300px;  /* keep a reasonable max width */
+  margin: 2rem auto;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .custom-button {
-  width: 100%;                  /* full width of container */
-  padding: 12px 20px;           /* padding */
-  border-radius: 24px;          /* rounded corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* subtle shadow */
-  border: 1px solid #d1d5db;   /* border color */
-  background-color: #ffffff;    /* white background */
-  outline: none;                /* remove default outline */
-  cursor: pointer;              /* pointer on hover */
-  font-size: 16px;              /* same text size */
-  text-align: center;           /* center text for button */
-  transition: all 0.2s ease;    /* smooth hover/focus effect */
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 24px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  transition: all 0.2s ease;
 }
 
 .custom-button:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* hover shadow */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .custom-button:focus {
-  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5); /* focus ring */
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5);
 }
+
+/* My element (image container) */
 .my-element {
-  width: 600px;
-  /* optional: add responsive widths if needed */
+  width: 90%;
+  max-width: 600px;
 }
 
 /* Responsive tweaks */
-@media (max-width: 768px) {
-  .verse-text { font-size: 0.875rem; }
+@media (max-width: 1024px) {
+  .verse-text { font-size: 1rem; }
   .book-signature { font-size: 0.75rem; }
-  .verse-container { padding: 1rem; }
-  .my-element {
-     width: 600px;
-  }
-}
-@media (min-width: 640px) { /* sm */
-  .my-element {
-    width: 600px;
-  }
 }
 
+@media (max-width: 768px) {
+  .verse-left, .verse-right { width: 100%; padding: 0.5rem; }
+  .verse-text { font-size: 0.875rem; }
+  .buttons { width: 95%; padding: 0.5rem; }
+  .my-element { width: 95%; }
+}
 
+@media (max-width: 480px) {
+  .verse-text { font-size: 0.8rem; }
+  .book-signature { font-size: 0.7rem; }
+  .buttons { width: 100%; padding: 0.25rem; gap: 0.5rem; }
+}

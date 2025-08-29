@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/bible-verse/static/css/main.b702b2a1.css",
+    "main.js": "/bible-verse/static/js/main.e610e0a5.js",
+    "static/media/bible-2.png": "/bible-verse/static/media/bible-2.e22f39acb238fbfebb5e.png",
+    "index.html": "/bible-verse/index.html",
+    "main.b702b2a1.css.map": "/bible-verse/static/css/main.b702b2a1.css.map",
+    "main.e610e0a5.js.map": "/bible-verse/static/js/main.e610e0a5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b702b2a1.css",
+    "static/js/main.e610e0a5.js"
+  ]
+}
